@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 public class Arquivo {
 	
 	private String texto;
+	private String caminho;
 	
 	//criação de um método para criação(quando não existir o arquivo) e gravação de dados no mesmo
 	

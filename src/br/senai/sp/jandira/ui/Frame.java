@@ -67,49 +67,43 @@ public class Frame extends JFrame {
 		btnSair.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnSair.setBounds(211, 179, 115, 40);
 		contentPane.add(btnSair);
-		
-		
-		Arquivo novoArq = new Arquivo();
-		
-		btnGravar.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				novoArq.gravar("C:\\Users\\21276093\\Desktop\\Teste\\testando.txt", txtPane.getText());
-				
-				novoArq.ler("C:\\Users\\21276093\\Desktop\\Teste\\testando.txt");
-				
-				
-				
-				
-				
-			}
-		});
-		
-		btnLimpar.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				txtPane.setText("");
-				
-			}
-		});
-		
-		btnSair.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				System.exit(0);
-				
-			}
-		});
-		
-		
-	}
-	
-}
 
-	
+		Arquivo novoArq = new Arquivo();
+		String caminho = "C:\\Users\\21276093\\Desktop\\Teste\\testando.txt";
+
+		btnGravar.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				String arquivo = novoArq.ler(caminho) + txtPane.getText();
+
+				novoArq.gravar(caminho, arquivo);
+
+				novoArq.ler(caminho);
+			}
+		});
+
+		btnLimpar.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				txtPane.setText("");
+
+			}
+		});
+
+		btnSair.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				System.exit(0);
+
+			}
+		});
+
+	}
+
+}
